@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Random Website</title>
+  <style>
+    body { font-family: system-ui, sans-serif; display: grid; place-items: center; height: 100vh; }
+    button { padding: 12px 18px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Open a random website</h1>
+  <button id="openBtn">Take me somewhere random</button>
+
+  <script>
+    const sites = [
+      "https://www.wikipedia.org/",
+      "https://xkcd.com/",
+      "https://news.ycombinator.com/",
+      "https://www.bbc.com/",
+      "https://www.reddit.com/r/interestingasfuck/",
+      "https://openstreetmap.org/",
+      "https://www.nationalgeographic.com/",
+      "https://www.khanacademy.org/",
+      "https://www.archdaily.com/",
+      "https://www.producthunt.com/"
+    ];
+
+    function openRandomSite() {
+      const i = Math.floor(Math.random() * sites.length);
+      const url = sites[i];
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    document.getElementById("openBtn").addEventListener("click", openRandomSite);
+  </script>
+</body>
+</html>
